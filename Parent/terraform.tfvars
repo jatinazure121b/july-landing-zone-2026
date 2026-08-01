@@ -1,6 +1,6 @@
 rgx = {
   rg1 = {
-    rg             = "rg100"
+    rg             = "rg100000"
     location       = "centralindia"
     vnet           = "vnet10"
     vnet_address   = ["10.0.0.0/16"]
