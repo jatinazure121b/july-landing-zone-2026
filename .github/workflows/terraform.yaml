@@ -16,13 +16,9 @@ jobs:
     name: Terraform Plan
     runs-on: ubuntu-latest
 
-<<<<<<< HEAD
     defaults:
       run:
         working-directory: ./
-
-=======
->>>>>>> 4a9d48bb688974222344be71b781d0b9d93ae686
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -51,19 +47,15 @@ jobs:
             }
 
       - name: Terraform Format
-        working-directory: environments/preprod
         run: terraform fmt -check -recursive
 
       - name: Terraform Init
-        working-directory: environments/preprod
         run: terraform init
 
       - name: Terraform Validate
-        working-directory: environments/preprod
         run: terraform validate
 
       - name: Terraform Plan
-        working-directory: environments/preprod
         run: terraform plan
 
   terraform-apply:
@@ -72,13 +64,11 @@ jobs:
     needs: terraform-plan
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
-<<<<<<< HEAD
+
     defaults:
       run:
         working-directory: ./
 
-=======
->>>>>>> 4a9d48bb688974222344be71b781d0b9d93ae686
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -98,20 +88,13 @@ jobs:
             }
 
       - name: Terraform Init
-        working-directory: environments/preprod
         run: terraform init
 
       - name: Terraform Validate
-        working-directory: environments/preprod
         run: terraform validate
 
       - name: Terraform Plan
-        working-directory: environments/preprod
         run: terraform plan -out=tfplan
 
       - name: Terraform Apply
-<<<<<<< HEAD
-=======
-        working-directory: environments/preprod
->>>>>>> 4a9d48bb688974222344be71b781d0b9d93ae686
         run: terraform apply -auto-approve tfplan
