@@ -1,7 +1,7 @@
 nic = {
 nic10 = {
 nic_name = "nics10"
-nic_rg = "rg1"
+nic_rg = "rg10"
 location = "centralindia"
 nic_vnet = "vnet10"
 nic_address  = ["10.0.0.0/16"]
@@ -16,7 +16,7 @@ nic_priority = "100"
 }
 nic20 = {
 nic_name = "nics20"
-nic_rg = "rg2"
+nic_rg = "rg20"
 location = "centralindia"
 nic_vnet = "vnet20"
 nic_address  = ["20.0.0.0/16"]
