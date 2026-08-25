@@ -1,1 +1,1 @@
-variable nic {}
+variable "nic" {}
